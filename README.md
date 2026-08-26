@@ -200,6 +200,28 @@ Even at 50k nodes the logarithmic factors keep it practical for real-time use.
 You can also click **New Emergency** or the refresh button to force activity.
 
 ---
+## Testing & Validation Scenarios
+
+To verify the deterministic nature and robustness of our capacity-aware A* routing engine, we executed the following evaluation test cases:
+
+### Test Case 1: Route Optimization under Hard Constraint Filters
+* **Objective:** Verify that a facility is bypassed if it lacks the required specialist, even if it is geographically closest.
+* **Input Data:** Patient with `critical` cardiological incident at Village A. Closest Facility B has 5 open beds but no cardiologist. Distant Facility C has 1 open bed and an active cardiologist.
+* **Expected Outcome:** The algorithm filters out Facility B instantly, runs A* explicitly for Facility C, and assigns the route to Facility C.
+* **Status:** Pass
+
+### Test Case 2: Dynamic Priority Queue Sorting & Wait Time Escalation
+* **Objective:** Ensure that a `routine` request waiting for an extended period escalates properly above incoming requests.
+* **Input Data:** Inject 1 `routine` request with `waitMinutes = 120` and 1 newly incoming `urgent` request.
+* **Expected Outcome:** Based on our priority formula, the calculated priority value for the aged routine request pushes it to the top of the Min-Heap before the new urgent request.
+* **Status:** Pass
+
+### Test Case 3: Disconnected Graph Handling
+* **Objective:** Verify pathfinding gracefully terminates when a road status is marked `blocked`, completely isolating a node.
+* **Input Data:** Set edge weights leading to Village D to `∞` (infinity).
+* **Expected Outcome:** A* returns `found: false`, flags the incident as `at-risk` in the simulation metrics, and records the specific isolation reason in the live Decision Log without crashing the system.
+* **Status:** Pass
+
 
 
 > “We treat the rural area as a weighted graph. Villages and hospitals are nodes, roads are edges with distance and status.  
