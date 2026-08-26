@@ -87,8 +87,7 @@ sanjivani-grid/
 
 ---
 
-## Algorithmic Design (40% + 20% of marks)
-
+## Algorithmic Design
 ### 1. Priority Queue for Patient Requests
 
 We use a **Binary Min-Heap**.
@@ -157,7 +156,7 @@ This directly addresses the “Decision Log / Cost transparency” requirement.
 
 ---
 
-## UI Features (10% of marks)
+## UI Features 
 
 - Live metrics bar (active incidents, queue size, ambulances ready, avg wait, cost avoided, SLA at risk)
 - Interactive SVG network map with villages, facilities, ambulances and animated active route
@@ -172,7 +171,7 @@ Visual design: dark command-center aesthetic with medical teal accents. Dense in
 
 ---
 
-## Complexity Analysis (for judges)
+## Complexity Analysis 
 
 | Operation | Time | Space |
 |-----------|------|-------|
@@ -202,7 +201,6 @@ You can also click **New Emergency** or the refresh button to force activity.
 
 ---
 
-## What to say in Viva (simple language)
 
 > “We treat the rural area as a weighted graph. Villages and hospitals are nodes, roads are edges with distance and status.  
 > Patient requests go into a priority queue so critical cases are always handled first.  
@@ -221,4 +219,4 @@ Core routing, prioritization and capacity logic are original implementations.
 
 ---
 
-**Sanjivani Grid** — Because every minute and every kilometre matters.
+**Sanjivani Grid**  Because every minute and every kilometre matters.
