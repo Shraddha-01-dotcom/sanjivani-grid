@@ -22,7 +22,7 @@ The algorithms are the same ones that would run on 50,000+ nodes and 200,000+ ed
 
 ---
 
-## Tech Stack (for Viva)
+## Tech Stack 
 
 | Layer | Technology | Why we chose it |
 |-------|------------|-----------------|
