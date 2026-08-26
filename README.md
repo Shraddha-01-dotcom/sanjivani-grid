@@ -218,5 +218,11 @@ Built for CodeRush Coding Competition.
 Core routing, prioritization and capacity logic are original implementations.
 
 ---
+## Third-Party APIs and AI Tools Used
+
+* **GitHub Copilot / ChatGPT**: Used as an AI pair-programmer to assist with rapid UI prototyping and edge-case code generation.
+* **Vercel**: Used as the cloud deployment platform to host and serve the live web simulation.
+* **Lucide React Icons**: Used as a third-party icon library to provide clean, vector-based visual assets for the interface.
+
 
 **Sanjivani Grid**  Because every minute and every kilometre matters.
